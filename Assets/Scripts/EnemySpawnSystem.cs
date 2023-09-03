@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class EnemySpawnSystem : MonoBehaviour
@@ -6,23 +7,23 @@ public class EnemySpawnSystem : MonoBehaviour
     [SerializeField] private Enemy _enemyTemplate;
 
     private EnemySpawner[] _enemySpawners;
-    private float _elapsedSpawnDelayTime = 0;
 
     private void Start()
     {
         _enemySpawners = GetComponentsInChildren<EnemySpawner>();
+
+        StartCoroutine(CyclicallySpawnEnemies(_spawnDelay));
     }
 
-    private void Update()
+    private IEnumerator CyclicallySpawnEnemies(float spawnDelay)
     {
-        if (_elapsedSpawnDelayTime >= _spawnDelay)
+        var waitForSeconds = new WaitForSeconds(spawnDelay);
+
+        while (true)
         {
             SpawnEnemy();
-            _elapsedSpawnDelayTime = 0;
-        }
-        else
-        {
-            _elapsedSpawnDelayTime += Time.deltaTime;
+
+            yield return waitForSeconds;
         }
     }
 
