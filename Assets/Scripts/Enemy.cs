@@ -1,46 +1,26 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
-public class Enemy : MonoBehaviour
+[RequireComponent(typeof(Collider))]
+public class Enemy : MovementObject
 {
-    [SerializeField] private float _movementSpeed;
-
-    private Rigidbody _rigidbody;
-    private CapsuleCollider _collider;
-
-    private Vector3 _movementDirection;
-    private bool _move = false;
+    private Collider _collider;
+    private Transform _target;
 
     public Vector3 Size => _collider.bounds.size;
 
-    private void Awake()
+    protected override void Awake()
     {
-        _rigidbody = GetComponent<Rigidbody>();
-        _collider = GetComponent<CapsuleCollider>();
+        base.Awake();
+        _collider = GetComponent<Collider>();
     }
 
     private void FixedUpdate()
     {
-        if (_move)
-            Move();
+        MoveTo(_target.position);
     }
 
-    public void StartMovement() => StartMovement(transform.forward);
-
-    public void StartMovement(Vector3 movementDirection)
+    public void StartMovement(Transform target)
     {
-        _movementDirection = movementDirection.normalized;
-        _move = true;
-    }
-
-    public void StopMovement()
-    {
-        _move = false;
-    }
-
-    private void Move()
-    {
-        Vector3 velocity = _movementDirection * _movementSpeed * Time.fixedDeltaTime;
-        _rigidbody.MovePosition(transform.position + velocity);
+        _target = target;
     }
 }

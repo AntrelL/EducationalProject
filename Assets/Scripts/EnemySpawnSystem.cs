@@ -4,7 +4,6 @@ using UnityEngine;
 public class EnemySpawnSystem : MonoBehaviour
 {
     [SerializeField] [Tooltip("In seconds")] private float _spawnDelay;
-    [SerializeField] private Enemy _enemyTemplate;
 
     private EnemySpawner[] _enemySpawners;
 
@@ -34,6 +33,6 @@ public class EnemySpawnSystem : MonoBehaviour
 
         int spawnerNumber = Random.Range(0, _enemySpawners.Length);
 
-        _enemySpawners[spawnerNumber].Spawn(_enemyTemplate);
+        _enemySpawners[spawnerNumber].Spawn();
     }
 }

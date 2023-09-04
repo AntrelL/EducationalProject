@@ -359,7 +359,11 @@
 "Assets/Scripts/Enemy.cs"
 "Assets/Scripts/EnemySpawner.cs"
 "Assets/Scripts/EnemySpawnSystem.cs"
+"Assets/Scripts/EnemyTarget.cs"
+"Assets/Scripts/MovementObject.cs"
+"Assets/Scripts/Navigator.cs"
 "Assets/Scripts/ObjectDestroyer.cs"
+"Assets/Scripts/Waypoint.cs"
 -langversion:9.0
 
 /deterministic
