@@ -60,9 +60,9 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Waypoint.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
-    <Compile Include="Assets\Scripts\CodeStyleTask\InstantShootingBullets.cs" />
     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\CodeStyleTask\PlacesVisitor.cs" />
+    <Compile Include="Assets\Scripts\CodeStyleTask\InstantBulletShooting.cs" />
     <Compile Include="Assets\Scripts\ObjectDestroyer.cs" />
     <Compile Include="Assets\Scripts\EnemySpawnSystem.cs" />
     <Compile Include="Assets\Scripts\MovementObject.cs" />
