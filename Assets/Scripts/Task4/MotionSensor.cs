@@ -4,11 +4,11 @@ public class MotionSensor : MonoBehaviour
 {
     public delegate void DetectionHandler();
 
-    public event DetectionHandler OnDetectedMotion;
+    public event DetectionHandler DetectedMotion;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent<MovementObject>(out _))
-            OnDetectedMotion?.Invoke();
+            DetectedMotion?.Invoke();
     }
 }
