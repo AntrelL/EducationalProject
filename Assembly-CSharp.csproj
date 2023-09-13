@@ -59,14 +59,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Task2\Navigator.cs" />
+    <Compile Include="Assets\Scripts\AnimationTask\TransformableObject.cs" />
     <Compile Include="Assets\Scripts\Task4\IWaitingObject.cs" />
     <Compile Include="Assets\Scripts\Task2\ObjectDestroyer.cs" />
     <Compile Include="Assets\Scripts\Task4\Thief.cs" />
+    <Compile Include="Assets\Scripts\AnimationTask\MovingForwardObject.cs" />
     <Compile Include="Assets\Scripts\Task2\Enemy.cs" />
     <Compile Include="Assets\Scripts\Task2\EnemySpawnSystem.cs" />
     <Compile Include="Assets\Scripts\Task4\Signaling.cs" />
     <Compile Include="Assets\Scripts\Task2\Waypoint.cs" />
+    <Compile Include="Assets\Scripts\AnimationTask\RotatingObject.cs" />
     <Compile Include="Assets\Scripts\Task4\WaitZone.cs" />
+    <Compile Include="Assets\Scripts\AnimationTask\ScalingObject.cs" />
     <Compile Include="Assets\Scripts\Task2\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\Task2\EnemyTarget.cs" />
     <Compile Include="Assets\Scripts\CodeStyleTask\PlacesVisitor.cs" />
