@@ -5,6 +5,8 @@ namespace Platformer
     [RequireComponent(typeof(Animator))]
     public class Fruit : MonoBehaviour
     {
+        private readonly int TakeId = Animator.StringToHash("Take");
+
         private Animator _animator;
 
         private void Start()
@@ -12,15 +14,10 @@ namespace Platformer
             _animator = GetComponent<Animator>();
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
+        public void Take()
         {
-            if (collision.TryGetComponent(out Player player))
-            {
-                player.TakeFruit(this);
-
-                _animator.SetTrigger("Take");
-                Destroy(gameObject, _animator.GetCurrentAnimatorClipInfo(0).Length);
-            }
+            _animator.SetTrigger(TakeId);
+            Destroy(gameObject, _animator.GetCurrentAnimatorClipInfo(0).Length);
         }
     }
 }

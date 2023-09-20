@@ -19,6 +19,10 @@ namespace Platformer
             Move(Input.GetAxis("Horizontal"));
         }
 
-        public void TakeFruit(Fruit fruit) { }
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.TryGetComponent(out Fruit fruit))
+                fruit.Take();
+        }
     }
 }

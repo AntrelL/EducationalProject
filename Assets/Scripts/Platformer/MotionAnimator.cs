@@ -6,6 +6,10 @@ namespace Platformer
     [RequireComponent(typeof(SpriteRenderer))]
     public class MotionAnimator : MonoBehaviour
     {
+        private readonly int HorizontalSpeedId = Animator.StringToHash("HorizontalSpeed");
+        private readonly int VerticalVelocityId = Animator.StringToHash("VerticalVelocity");
+        private readonly int GroundedId = Animator.StringToHash("Grounded");
+
         private Animator _animator;
         private SpriteRenderer _spriteRenderer;
 
@@ -13,7 +17,7 @@ namespace Platformer
         {
             set
             {
-                _animator.SetFloat("HorizontalSpeed", Mathf.Abs(value));
+                _animator.SetFloat(HorizontalSpeedId, Mathf.Abs(value));
                 _spriteRenderer.flipX = value == 0 ? _spriteRenderer.flipX : value < 0;
             }
         }
@@ -22,7 +26,7 @@ namespace Platformer
         {
             set
             {
-                _animator.SetFloat("VerticalVelocity", value);
+                _animator.SetFloat(VerticalVelocityId, value);
             }
         }
 
@@ -30,7 +34,7 @@ namespace Platformer
         {
             set
             {
-                _animator.SetBool("Grounded", value);
+                _animator.SetBool(GroundedId, value);
             }
         }
 
