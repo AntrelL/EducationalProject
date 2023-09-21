@@ -61,8 +61,8 @@
     <Compile Include="Assets\Scripts\Task2\Navigator.cs" />
     <Compile Include="Assets\Scripts\AnimationTask\TransformableObject.cs" />
     <Compile Include="Assets\Scripts\Task4\IWaitingObject.cs" />
+    <Compile Include="Assets\Scripts\Platformer\FruitSpawner.cs" />
     <Compile Include="Assets\Scripts\Task2\ObjectDestroyer.cs" />
-    <Compile Include="Assets\Scripts\Platformer\FruitSpawnSystem.cs" />
     <Compile Include="Assets\Scripts\Task4\Thief.cs" />
     <Compile Include="Assets\Scripts\AnimationTask\MovingForwardObject.cs" />
     <Compile Include="Assets\Scripts\Task2\Enemy.cs" />

@@ -391,7 +391,7 @@
 "Assets/Scripts/CodeStyleTask/PlacesVisitor.cs"
 "Assets/Scripts/Platformer/Enemy.cs"
 "Assets/Scripts/Platformer/Fruit.cs"
-"Assets/Scripts/Platformer/FruitSpawnSystem.cs"
+"Assets/Scripts/Platformer/FruitSpawner.cs"
 "Assets/Scripts/Platformer/MotionAnimator.cs"
 "Assets/Scripts/Platformer/Movement.cs"
 "Assets/Scripts/Platformer/Navigator.cs"

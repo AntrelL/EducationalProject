@@ -4,6 +4,8 @@ namespace Platformer
 {
     public class Player : Movement
     {
+        private const string Horizontal = "Horizontal";
+
         protected override void Update()
         {
             base.Update();
@@ -16,7 +18,7 @@ namespace Platformer
         {
             base.FixedUpdate();
 
-            Move(Input.GetAxis("Horizontal"));
+            Move(Input.GetAxis(Horizontal));
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
