@@ -418,6 +418,7 @@
 "Assets/Scripts/Task4/Signaling.cs"
 "Assets/Scripts/Task4/Thief.cs"
 "Assets/Scripts/Task4/WaitZone.cs"
+"Assets/Scripts/UI/CursorVisualizerInEditor.cs"
 -langversion:9.0
 
 /deterministic
