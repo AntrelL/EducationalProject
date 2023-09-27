@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\Task4\IWaitingObject.cs" />
     <Compile Include="Assets\Scripts\Platformer\FruitSpawner.cs" />
     <Compile Include="Assets\Scripts\Task2\ObjectDestroyer.cs" />
+    <Compile Include="Assets\Scripts\UI\Task2\HealthVisualizer.cs" />
     <Compile Include="Assets\Scripts\AnimationTaskWithDOTween\Scaler.cs" />
     <Compile Include="Assets\Scripts\Task4\Thief.cs" />
     <Compile Include="Assets\Scripts\AnimationTaskWithDOTween\TextChanger.cs" />
@@ -76,11 +77,13 @@
     <Compile Include="Assets\Scripts\Platformer\Enemy.cs" />
     <Compile Include="Assets\Scripts\AnimationTask\RotatingObject.cs" />
     <Compile Include="Assets\Scripts\Task4\WaitZone.cs" />
+    <Compile Include="Assets\Scripts\UI\Task2\Player.cs" />
     <Compile Include="Assets\Scripts\AnimationTaskWithDOTween\Rotator.cs" />
     <Compile Include="Assets\Scripts\AnimationTask\ScalingObject.cs" />
     <Compile Include="Assets\Scripts\Task2\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\Platformer\Player.cs" />
     <Compile Include="Assets\Scripts\Task2\EnemyTarget.cs" />
+    <Compile Include="Assets\Scripts\UI\Task2\HealthBar.cs" />
     <Compile Include="Assets\Scripts\CodeStyleTask\PlacesVisitor.cs" />
     <Compile Include="Assets\Scripts\CodeStyleTask\InstantBulletShooting.cs" />
     <Compile Include="Assets\Scripts\Platformer\Fruit.cs" />

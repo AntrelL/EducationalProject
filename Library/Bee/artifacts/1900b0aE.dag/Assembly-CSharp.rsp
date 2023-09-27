@@ -419,6 +419,9 @@
 "Assets/Scripts/Task4/Thief.cs"
 "Assets/Scripts/Task4/WaitZone.cs"
 "Assets/Scripts/UI/CursorVisualizerInEditor.cs"
+"Assets/Scripts/UI/Task2/HealthBar.cs"
+"Assets/Scripts/UI/Task2/HealthVisualizer.cs"
+"Assets/Scripts/UI/Task2/Player.cs"
 -langversion:9.0
 
 /deterministic
