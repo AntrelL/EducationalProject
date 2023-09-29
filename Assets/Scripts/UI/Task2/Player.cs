@@ -5,6 +5,9 @@ namespace UITask2
 {
     public class Player : MonoBehaviour
     {
+        private readonly string Damage = "Damage";
+        private readonly string Healing = "Healing";
+
         [SerializeField] private HealthVisualizer _healthVisualizer;
 
         private float _maxHealth = 100f;
@@ -16,7 +19,7 @@ namespace UITask2
             private set
             {
                 _health = Mathf.Clamp(value, 0, _maxHealth);
-                _healthVisualizer?.UpdateHealthValue(_health);
+                _healthVisualizer?.UpdateValue(_health);
             }
         }
 
@@ -27,13 +30,13 @@ namespace UITask2
 
         public void TakeDamage(float value)
         {
-            CheckCorrectChangeValue(value, "Damage");
+            CheckCorrectChangeValue(value, Damage);
             Health -= value;
         }
 
         public void Heal(float value)
         {
-            CheckCorrectChangeValue(value, "Healing");
+            CheckCorrectChangeValue(value, Healing);
             Health += value;
         }
 

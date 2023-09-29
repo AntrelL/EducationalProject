@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,21 +10,29 @@ namespace UITask2
         [SerializeField] private float _rateOfChangeValue;
 
         private Slider _slider;
-        private float _targetValue;
+        private Coroutine _healthChanger;
 
         private void Start()
         {
             _slider = GetComponent<Slider>();
         }
 
-        private void Update()
+        public override void UpdateValue(float value)
         {
-            _slider.value = Mathf.MoveTowards(_slider.value, _targetValue, _rateOfChangeValue * Time.deltaTime);
+            if (_healthChanger != null)
+                StopCoroutine(_healthChanger);
+
+            _healthChanger = StartCoroutine(ChangeValue(value, _rateOfChangeValue));
         }
 
-        public override void UpdateHealthValue(float value)
+        private IEnumerator ChangeValue(float targetValue, float rateOfChange)
         {
-            _targetValue = value;
+            while (_slider.value != targetValue)
+            {
+                _slider.value = Mathf.MoveTowards(_slider.value, targetValue, rateOfChange * Time.deltaTime);
+
+                yield return null;
+            }
         }
     }
 }
