@@ -17,15 +17,15 @@ namespace UITask2
             _slider = GetComponent<Slider>();
         }
 
-        public override void UpdateValue(float value)
+        public override void UpdateHealthValue(float value)
         {
             if (_healthChanger != null)
                 StopCoroutine(_healthChanger);
 
-            _healthChanger = StartCoroutine(ChangeValue(value, _rateOfChangeValue));
+            _healthChanger = StartCoroutine(ChangeHealthValue(value, _rateOfChangeValue));
         }
 
-        private IEnumerator ChangeValue(float targetValue, float rateOfChange)
+        private IEnumerator ChangeHealthValue(float targetValue, float rateOfChange)
         {
             while (_slider.value != targetValue)
             {

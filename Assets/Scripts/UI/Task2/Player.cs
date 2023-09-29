@@ -19,7 +19,7 @@ namespace UITask2
             private set
             {
                 _health = Mathf.Clamp(value, 0, _maxHealth);
-                _healthVisualizer?.UpdateValue(_health);
+                _healthVisualizer?.UpdateHealthValue(_health);
             }
         }
 

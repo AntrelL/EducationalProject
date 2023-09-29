@@ -4,6 +4,6 @@ namespace UITask2
 {
     public abstract class HealthVisualizer : MonoBehaviour
     {
-        public virtual void UpdateValue(float value) { }
+        public virtual void UpdateHealthValue(float value) { }
     }
 }
