@@ -4,15 +4,15 @@ using UnityEngine;
 
 namespace Runner
 {
-    public class ObjectPool : MonoBehaviour
+    public class ObjectPool<T> : MonoBehaviour where T : MonoBehaviour
     {
         [SerializeField] private Transform _container;
         [SerializeField] private int _capacity;
 
-        private List<GameObject> _pool = new List<GameObject>();
-        private GameObject[] _sparePrefabs;
+        private List<T> _pool = new List<T>();
+        private T[] _sparePrefabs;
 
-        public void Initialize(GameObject[] prefabs)
+        public void Initialize(T[] prefabs)
         {
             int objectTypeCounter = 0;
 
@@ -28,9 +28,9 @@ namespace Runner
             _sparePrefabs = prefabs;
         }
 
-        public GameObject GetObject()
+        public T GetObject()
         {
-            GameObject result = _pool.FirstOrDefault(savedObject => savedObject.activeSelf == false);
+            T result = _pool.FirstOrDefault(savedObject => savedObject.gameObject.activeSelf == false);
 
             if (result == null)
             {
@@ -41,23 +41,23 @@ namespace Runner
             return result;
         }
 
-        private GameObject InitializeOneRandomObject(GameObject[] prefabs)
+        private T InitializeOneRandomObject(T[] prefabs)
         {
             int randomIndex = Random.Range(0, prefabs.Length);
 
             return InitializeOneObject(prefabs[randomIndex]);
         }
 
-        private GameObject InitializeOneObject(GameObject prefab)
+        private T InitializeOneObject(T prefab)
         {
-            GameObject spawned = Instantiate(prefab, _container);
-            spawned.SetActive(false);
+            T spawned = Instantiate(prefab, _container);
+            spawned.gameObject.SetActive(false);
 
             _pool.Add(spawned);
             return spawned;
         }
 
-        private void Shuffle<T>(List<T> list)
+        private void Shuffle(List<T> list)
         {
             for (int i = list.Count - 1; i >= 1; i--)
             {

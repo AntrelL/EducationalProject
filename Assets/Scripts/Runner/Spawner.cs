@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace Runner
 {
-    public class Spawner : ObjectPool
+    public class Spawner : ObjectPool<SideMovementObject>
     {
-        [SerializeField] private float _secondsBetweenSpawn;
-        [SerializeField] private GameObject[] _prefabs;
+        [SerializeField] private float _delay;
+        [SerializeField] private SideMovementObject[] _prefabs;
 
         private Transform[] _spawnPoints;
 
@@ -16,19 +16,19 @@ namespace Runner
             _spawnPoints = GetComponentsInChildren<Transform>().Skip(1).ToArray();
             Initialize(_prefabs);
 
-            StartCoroutine(Spawn(_secondsBetweenSpawn));
+            StartCoroutine(Spawn(_delay));
         }
 
-        private IEnumerator Spawn(float secondsBetweenSpawn)
+        private IEnumerator Spawn(float delay)
         {
-            var waitForSeconds = new WaitForSeconds(secondsBetweenSpawn);
+            var waitForSeconds = new WaitForSeconds(delay);
 
             while (true)
             {
-                GameObject gameObject = GetObject();
+                SideMovementObject sideMovementObject = GetObject();
                 int spawnPointNumber = Random.Range(0, _spawnPoints.Length);
 
-                SetObject(gameObject, _spawnPoints[spawnPointNumber].position);
+                SetObject(sideMovementObject.gameObject, _spawnPoints[spawnPointNumber].position);
 
                 yield return waitForSeconds;
             }
