@@ -62,17 +62,24 @@
     <Compile Include="Assets\Scripts\AnimationTask\TransformableObject.cs" />
     <Compile Include="Assets\Scripts\Task4\IWaitingObject.cs" />
     <Compile Include="Assets\Scripts\Platformer\FruitSpawner.cs" />
+    <Compile Include="Assets\Scripts\Runner\ObjectPool.cs" />
     <Compile Include="Assets\Scripts\Task2\ObjectDestroyer.cs" />
     <Compile Include="Assets\Scripts\UI\Task2\HealthVisualizer.cs" />
     <Compile Include="Assets\Scripts\AnimationTaskWithDOTween\Scaler.cs" />
     <Compile Include="Assets\Scripts\Task4\Thief.cs" />
     <Compile Include="Assets\Scripts\AnimationTaskWithDOTween\TextChanger.cs" />
     <Compile Include="Assets\Scripts\AnimationTaskWithDOTween\ColorChanger.cs" />
+    <Compile Include="Assets\Scripts\Runner\UI\Health\HealthBar.cs" />
+    <Compile Include="Assets\Scripts\Runner\SideMovementObjects\HealthReplenisher.cs" />
+    <Compile Include="Assets\Scripts\Runner\Player\PlayerInput.cs" />
     <Compile Include="Assets\Scripts\AnimationTask\MovingForwardObject.cs" />
     <Compile Include="Assets\Scripts\Task2\Enemy.cs" />
     <Compile Include="Assets\Scripts\Task2\EnemySpawnSystem.cs" />
     <Compile Include="Assets\Scripts\AnimationTaskWithDOTween\Mover.cs" />
+    <Compile Include="Assets\Scripts\Runner\SideMovementObjects\SideMovementObject.cs" />
     <Compile Include="Assets\Scripts\Task4\Signaling.cs" />
+    <Compile Include="Assets\Scripts\Runner\Parallax.cs" />
+    <Compile Include="Assets\Scripts\Runner\Player\PlayerMover.cs" />
     <Compile Include="Assets\Scripts\Task2\Waypoint.cs" />
     <Compile Include="Assets\Scripts\Platformer\Enemy.cs" />
     <Compile Include="Assets\Scripts\AnimationTask\RotatingObject.cs" />
@@ -80,10 +87,14 @@
     <Compile Include="Assets\Scripts\UI\Task2\Player.cs" />
     <Compile Include="Assets\Scripts\AnimationTaskWithDOTween\Rotator.cs" />
     <Compile Include="Assets\Scripts\AnimationTask\ScalingObject.cs" />
+    <Compile Include="Assets\Scripts\Runner\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Task2\EnemySpawner.cs" />
+    <Compile Include="Assets\Scripts\Runner\Spawner.cs" />
     <Compile Include="Assets\Scripts\Platformer\Player.cs" />
+    <Compile Include="Assets\Scripts\Runner\SideMovementObjects\Asteroid.cs" />
     <Compile Include="Assets\Scripts\Task2\EnemyTarget.cs" />
     <Compile Include="Assets\Scripts\UI\Task2\HealthBar.cs" />
+    <Compile Include="Assets\Scripts\Runner\UI\GameOverScreen.cs" />
     <Compile Include="Assets\Scripts\CodeStyleTask\PlacesVisitor.cs" />
     <Compile Include="Assets\Scripts\CodeStyleTask\InstantBulletShooting.cs" />
     <Compile Include="Assets\Scripts\Platformer\Fruit.cs" />
@@ -93,6 +104,7 @@
     <Compile Include="Assets\Scripts\Platformer\MotionAnimator.cs" />
     <Compile Include="Assets\Scripts\Platformer\Navigator.cs" />
     <Compile Include="Assets\Scripts\Task2\MovementObject.cs" />
+    <Compile Include="Assets\Scripts\Runner\UI\Health\HealthCell.cs" />
     <Compile Include="Assets\Scripts\Platformer\Movement.cs" />
     <Compile Include="Assets\Scripts\AnimationTaskWithDOTween\Transformer.cs" />
   </ItemGroup>
