@@ -163,8 +163,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 86042678}
-  m_Layer: 0
-  m_Name: Fruits
+  m_Layer: 8
+  m_Name: Items
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2157,6 +2157,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7810891014885713044, guid: f3cfde5d9b7832341bcd346177559ea0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2378,10 +2382,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6382e255a208d224fbe34e0d0b2c6995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fruitQuantitySpawnFactor: 0.6
-  _fruitSpawnPointStorage: {fileID: 0}
-  _fruitContainer: {fileID: 86042678}
-  _fruitTemplate: {fileID: 413623417186330155, guid: 60933bfb6403fed458b0870c48f9d74a, type: 3}
+  _itemQuantitySpawnFactor: 0.5
+  _itemSpawnPointStorage: {fileID: 1010916378}
+  _itemContainer: {fileID: 86042678}
+  _itemTemplates:
+  - {fileID: 413623417186330155, guid: 60933bfb6403fed458b0870c48f9d74a, type: 3}
+  - {fileID: 1063512579519851861, guid: ed9918e86d8d6ed43851da12c90416f2, type: 3}
 --- !u!1 &1065798925
 GameObject:
   m_ObjectHideFlags: 0
@@ -2581,12 +2587,11 @@ GameObject:
   - component: {fileID: 1372780018}
   - component: {fileID: 1372780017}
   - component: {fileID: 1372780021}
-  - component: {fileID: 1372780024}
   - component: {fileID: 1372780020}
   - component: {fileID: 1372780019}
   - component: {fileID: 1372780022}
   - component: {fileID: 1372780023}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2765,9 +2770,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02e386f8224bf464abcb76014f89dffb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EntityActionAnimator: {fileID: 1372780023}
   _movementSpeed: 4
   _jumpForce: 5
-  _motionAnimator: {fileID: 1372780023}
+  _maxHealth: 100
+  _damage: 40
+  _recliningForce: 7
+  _health: 0
 --- !u!114 &1372780023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2780,51 +2789,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2153ff4c882317147a489c3b7aad2f14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &1372780024
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1372780016}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.6875, y: 0.75}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.6875, y: 0.75}
-  m_EdgeRadius: 0
 --- !u!1001 &1514594370
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2835,7 +2799,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2296604136748132127, guid: fe3f15759b4094b47bc746a906ad4204, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.25
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 2296604136748132127, guid: fe3f15759b4094b47bc746a906ad4204, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3152,6 +3116,10 @@ PrefabInstance:
       propertyPath: _motionAnimator
       value: 
       objectReference: {fileID: 2600960441050078165}
+    - target: {fileID: 7207743803561419376, guid: f3cfde5d9b7832341bcd346177559ea0, type: 3}
+      propertyPath: _ignoredViewLayerMask.m_Bits
+      value: 384
+      objectReference: {fileID: 0}
     - target: {fileID: 7457753730742751010, guid: f3cfde5d9b7832341bcd346177559ea0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4

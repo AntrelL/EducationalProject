@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Platformer
 {
-    public class Player : Movement
+    public class Player : Entity
     {
         private const string Horizontal = "Horizontal";
 
@@ -23,8 +23,17 @@ namespace Platformer
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.TryGetComponent(out Fruit fruit))
-                fruit.Take();
+            if (collision.TryGetComponent(out Item item))
+                item.Take(this);
+        }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.TryGetComponent(out Enemy enemy))
+            {
+                Vector2 enemyKnockback = CalculateKnockback(RecliningForce, enemy.transform.position);
+                enemy.ApplyDamage(Damage, enemyKnockback);
+            }
         }
     }
 }
