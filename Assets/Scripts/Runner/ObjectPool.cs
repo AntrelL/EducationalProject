@@ -24,7 +24,9 @@ namespace Runner
                 InitializeOneObject(prefabs[objectTypeCounter++]);
             }
 
-            Shuffle(_pool);
+            if (prefabs.Length > 1)
+                Shuffle(_pool);
+
             _sparePrefabs = prefabs;
         }
 
