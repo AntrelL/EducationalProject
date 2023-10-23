@@ -9,10 +9,12 @@ namespace CollectorBots
         private CollectorBotBase _botBase;
         private Resource _targetResource;
 
-        public bool _isFree = true;
-        public bool _isTargetResourceReceived = false;
+        private bool _isFree = true;
+        private bool _isTargetResourceReceived = false;
 
         private Resource _handSlot;
+
+        public bool IsFree => _isFree;
 
         private void FixedUpdate()
         {

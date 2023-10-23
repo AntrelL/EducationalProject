@@ -130,7 +130,7 @@ namespace CollectorBots
         {
             foreach (CollectorBot bot in _bots)
             {
-                if (bot._isFree)
+                if (bot.IsFree)
                 {
                     freeBot = bot;
                     return true;
