@@ -8,7 +8,7 @@ namespace CollectorBots
     {
         private CapsuleCollider _capsuleCollider;
 
-        public UnityAction<Resource> ResourceDetected;
+        public event UnityAction<Resource> ResourceDetected;
 
         public Vector3 Scale
         {

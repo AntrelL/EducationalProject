@@ -10,8 +10,8 @@ namespace CollectorBots
         [SerializeField] private int _initialNumberOfBots;
         [SerializeField] private CollectorBot _botTemplate;
         [SerializeField] private Transform _botsContainer;
-        [SerializeField] CapsuleCollider _mainCollider;
-        [SerializeField] Transform _ResourcesContainer;
+        [SerializeField] private CapsuleCollider _mainCollider;
+        [SerializeField] private Transform _ResourcesContainer;
 
         private List<CollectorBot> _bots = new List<CollectorBot>();
         private Queue<Resource> _standbyResources = new Queue<Resource>(); 
@@ -22,7 +22,7 @@ namespace CollectorBots
         private float _botSpawnDistance;
         private float _botSpawnHeight;
 
-        public UnityAction<int> NumberOfResourcesChanged;
+        public event UnityAction<int> NumberOfResourcesChanged;
 
         private int NumberOfResources
         {
