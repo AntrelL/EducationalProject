@@ -61,6 +61,7 @@
     <Compile Include="Assets\Scripts\Task2\Navigator.cs" />
     <Compile Include="Assets\Scripts\Platformer\Items\Fruit.cs" />
     <Compile Include="Assets\Scripts\AnimationTask\TransformableObject.cs" />
+    <Compile Include="Assets\Scripts\CollectorBots\Resources\Resource.cs" />
     <Compile Include="Assets\Scripts\Task4\IWaitingObject.cs" />
     <Compile Include="Assets\Scripts\Runner\ObjectPool.cs" />
     <Compile Include="Assets\Scripts\Task2\ObjectDestroyer.cs" />
@@ -69,10 +70,10 @@
     <Compile Include="Assets\Scripts\Task4\Thief.cs" />
     <Compile Include="Assets\Scripts\AnimationTaskWithDOTween\TextChanger.cs" />
     <Compile Include="Assets\Scripts\AnimationTaskWithDOTween\ColorChanger.cs" />
+    <Compile Include="Assets\Scripts\CollectorBots\Scanner\Scanner.cs" />
     <Compile Include="Assets\Scripts\Runner\UI\Health\HealthBar.cs" />
     <Compile Include="Assets\Scripts\Runner\SideMovementObjects\HealthReplenisher.cs" />
     <Compile Include="Assets\Scripts\Runner\Player\PlayerInput.cs" />
-    <Compile Include="Assets\Scripts\CollectorBots\ScanDetector.cs" />
     <Compile Include="Assets\Scripts\AnimationTask\MovingForwardObject.cs" />
     <Compile Include="Assets\Scripts\Task2\Enemy.cs" />
     <Compile Include="Assets\Scripts\Task2\EnemySpawnSystem.cs" />
@@ -85,7 +86,7 @@
     <Compile Include="Assets\Scripts\Platformer\Entity.cs" />
     <Compile Include="Assets\Scripts\Platformer\Enemy.cs" />
     <Compile Include="Assets\Scripts\AnimationTask\RotatingObject.cs" />
-    <Compile Include="Assets\Scripts\CollectorBots\ResourceViewer.cs" />
+    <Compile Include="Assets\Scripts\CollectorBots\Resources\ResourceSpawner.cs" />
     <Compile Include="Assets\Scripts\Task4\WaitZone.cs" />
     <Compile Include="Assets\Scripts\UI\Task2\Player.cs" />
     <Compile Include="Assets\Scripts\AnimationTaskWithDOTween\Rotator.cs" />
@@ -94,6 +95,7 @@
     <Compile Include="Assets\Scripts\Platformer\Items\HealingObject.cs" />
     <Compile Include="Assets\Scripts\Runner\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Platformer\Items\Item.cs" />
+    <Compile Include="Assets\Scripts\CollectorBots\BaseStatesIndicator.cs" />
     <Compile Include="Assets\Scripts\Task2\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\Runner\Spawner.cs" />
     <Compile Include="Assets\Scripts\Platformer\Player.cs" />
@@ -105,15 +107,17 @@
     <Compile Include="Assets\Scripts\CodeStyleTask\PlacesVisitor.cs" />
     <Compile Include="Assets\Scripts\Platformer\EntityActionAnimator.cs" />
     <Compile Include="Assets\Scripts\CodeStyleTask\InstantBulletShooting.cs" />
+    <Compile Include="Assets\Scripts\CollectorBots\Scanner\ScanDetector.cs" />
     <Compile Include="Assets\Scripts\Platformer\Waypoint.cs" />
-    <Compile Include="Assets\Scripts\CollectorBots\ResourceSpawner.cs" />
     <Compile Include="Assets\Scripts\UI\CursorVisualizerInEditor.cs" />
+    <Compile Include="Assets\Scripts\CollectorBots\Player.cs" />
     <Compile Include="Assets\Scripts\Task4\MotionSensor.cs" />
     <Compile Include="Assets\Scripts\Platformer\Navigator.cs" />
     <Compile Include="Assets\Scripts\Task2\MovementObject.cs" />
     <Compile Include="Assets\Scripts\Runner\UI\Health\HealthCell.cs" />
-    <Compile Include="Assets\Scripts\CollectorBots\Scanner.cs" />
-    <Compile Include="Assets\Scripts\CollectorBots\Resource.cs" />
+    <Compile Include="Assets\Scripts\CollectorBots\BotBasePlayerClickArea.cs" />
+    <Compile Include="Assets\Scripts\CollectorBots\Flag.cs" />
+    <Compile Include="Assets\Scripts\CollectorBots\Resources\ResourceViewer.cs" />
     <Compile Include="Assets\Scripts\Platformer\Items\ItemSpawner.cs" />
     <Compile Include="Assets\Scripts\Platformer\Movement.cs" />
     <Compile Include="Assets\Scripts\AnimationTaskWithDOTween\Transformer.cs" />
