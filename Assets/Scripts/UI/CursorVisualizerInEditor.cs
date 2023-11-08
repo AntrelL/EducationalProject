@@ -7,7 +7,7 @@ using UnityEditor;
 public class CursorVisualizerInEditor : MonoBehaviour
 {
 #if UNITY_EDITOR
-    private void Start()
+    private void Awake()
     {
         Cursor.visible = true;
         Cursor.SetCursor(PlayerSettings.defaultCursor, Vector2.zero, CursorMode.ForceSoftware);

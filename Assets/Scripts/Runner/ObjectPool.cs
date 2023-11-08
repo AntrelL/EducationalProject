@@ -11,9 +11,12 @@ namespace Runner
 
         private List<T> _pool = new List<T>();
         private T[] _sparePrefabs;
+        private Camera _camera;
 
-        public void Initialize(T[] prefabs)
+        protected void Initialize(T[] prefabs)
         {
+            _camera = Camera.main;
+
             int objectTypeCounter = 0;
 
             for (int i = 0; i < _capacity; i++)
@@ -30,7 +33,7 @@ namespace Runner
             _sparePrefabs = prefabs;
         }
 
-        public T GetObject()
+        protected T GetObject()
         {
             T result = _pool.FirstOrDefault(savedObject => savedObject.gameObject.activeSelf == false);
 
@@ -41,6 +44,27 @@ namespace Runner
             }
 
             return result;
+        }
+
+        protected void DisableOffScreenEnemies()
+        {
+            Vector3 disablePoint = _camera.ViewportToWorldPoint(new Vector2(0f, 0.5f));
+
+            foreach (T item in _pool)
+            {
+                if (item.gameObject.activeSelf == true && item.transform.position.x < disablePoint.x)
+                {
+                    item.gameObject.SetActive(false);
+                }
+            }
+        }
+
+        protected void ResetPool()
+        {
+            foreach (T item in _pool)
+            {
+                item.gameObject.SetActive(false);
+            }
         }
 
         private T InitializeOneRandomObject(T[] prefabs)
