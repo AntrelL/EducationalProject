@@ -64,9 +64,11 @@
     <Compile Include="Assets\Scripts\CollectorBots\Resources\Resource.cs" />
     <Compile Include="Assets\Scripts\Task4\IWaitingObject.cs" />
     <Compile Include="Assets\Scripts\FlappyTerminator\Player\Player.cs" />
+    <Compile Include="Assets\Scripts\CollectorBots\Base\BotBaseStatesIndicator.cs" />
     <Compile Include="Assets\Scripts\Runner\ObjectPool.cs" />
     <Compile Include="Assets\Scripts\Task2\ObjectDestroyer.cs" />
     <Compile Include="Assets\Scripts\UI\Task2\HealthVisualizer.cs" />
+    <Compile Include="Assets\Scripts\CollectorBots\Bot.cs" />
     <Compile Include="Assets\Scripts\AnimationTaskWithDOTween\Scaler.cs" />
     <Compile Include="Assets\Scripts\FlappyTerminator\Game.cs" />
     <Compile Include="Assets\Scripts\Task4\Thief.cs" />
@@ -97,11 +99,9 @@
     <Compile Include="Assets\Scripts\Task4\WaitZone.cs" />
     <Compile Include="Assets\Scripts\UI\Task2\Player.cs" />
     <Compile Include="Assets\Scripts\AnimationTaskWithDOTween\Rotator.cs" />
-    <Compile Include="Assets\Scripts\CollectorBots\CollectorBotBase.cs" />
     <Compile Include="Assets\Scripts\AnimationTask\ScalingObject.cs" />
     <Compile Include="Assets\Scripts\Platformer\Items\HealingObject.cs" />
     <Compile Include="Assets\Scripts\Runner\Player\Player.cs" />
-    <Compile Include="Assets\Scripts\CollectorBots\BaseStatesIndicator.cs" />
     <Compile Include="Assets\Scripts\Platformer\Items\Item.cs" />
     <Compile Include="Assets\Scripts\Task2\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\Runner\Spawner.cs" />
@@ -109,7 +109,6 @@
     <Compile Include="Assets\Scripts\Runner\SideMovementObjects\Asteroid.cs" />
     <Compile Include="Assets\Scripts\FlappyTerminator\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\Task2\EnemyTarget.cs" />
-    <Compile Include="Assets\Scripts\CollectorBots\CollectorBot.cs" />
     <Compile Include="Assets\Scripts\UI\Task2\HealthBar.cs" />
     <Compile Include="Assets\Scripts\Runner\UI\GameOverScreen.cs" />
     <Compile Include="Assets\Scripts\CodeStyleTask\PlacesVisitor.cs" />
@@ -119,12 +118,14 @@
     <Compile Include="Assets\Scripts\Platformer\Waypoint.cs" />
     <Compile Include="Assets\Scripts\UI\CursorVisualizerInEditor.cs" />
     <Compile Include="Assets\Scripts\CollectorBots\Player.cs" />
+    <Compile Include="Assets\Scripts\CollectorBots\Base\BotBasePlayerClickArea.cs" />
     <Compile Include="Assets\Scripts\Task4\MotionSensor.cs" />
     <Compile Include="Assets\Scripts\Platformer\Navigator.cs" />
     <Compile Include="Assets\Scripts\Task2\MovementObject.cs" />
     <Compile Include="Assets\Scripts\FlappyTerminator\Ui\StartScreen.cs" />
+    <Compile Include="Assets\Scripts\CollectorBots\Base\BotBase.cs" />
     <Compile Include="Assets\Scripts\Runner\UI\Health\HealthCell.cs" />
-    <Compile Include="Assets\Scripts\CollectorBots\BotBasePlayerClickArea.cs" />
+    <Compile Include="Assets\Scripts\CollectorBots\Base\BotSpawner.cs" />
     <Compile Include="Assets\Scripts\FlappyTerminator\Enemy\EnemyMover.cs" />
     <Compile Include="Assets\Scripts\CollectorBots\Flag.cs" />
     <Compile Include="Assets\Scripts\CollectorBots\Resources\ResourceViewer.cs" />

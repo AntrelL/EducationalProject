@@ -573,17 +573,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1386599400 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 126685431789888475, guid: bb1b2b73c48234948b2bc4a99357029b, type: 3}
-  m_PrefabInstance: {fileID: 7628083297266462047}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afab02fc61b11a468341416ebc51960, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1415086760
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,7 +720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 802dcaca29c0624488d56b41b23ee6ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _collectorBotBase: {fileID: 1386599400}
+  _botBase: {fileID: 1886628172}
 --- !u!1 &1694926981
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,6 +878,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1886628172 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8043653341126564751, guid: bb1b2b73c48234948b2bc4a99357029b, type: 3}
+  m_PrefabInstance: {fileID: 7628083297266462047}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b353ed0686308445b6f76cdf7e57b4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3043935723109466447
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -985,6 +985,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Base
       objectReference: {fileID: 0}
+    - target: {fileID: 2808799015575428006, guid: bb1b2b73c48234948b2bc4a99357029b, type: 3}
+      propertyPath: _botsContainer
+      value: 
+      objectReference: {fileID: 1369135360}
     - target: {fileID: 7434789019484878359, guid: bb1b2b73c48234948b2bc4a99357029b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1025,6 +1029,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8043653341126564751, guid: bb1b2b73c48234948b2bc4a99357029b, type: 3}
+      propertyPath: _flag
+      value: 
+      objectReference: {fileID: 3043935723109466448}
+    - target: {fileID: 8043653341126564751, guid: bb1b2b73c48234948b2bc4a99357029b, type: 3}
+      propertyPath: _botsContainer
+      value: 
+      objectReference: {fileID: 1369135360}
+    - target: {fileID: 8043653341126564751, guid: bb1b2b73c48234948b2bc4a99357029b, type: 3}
+      propertyPath: _resourcesContainer
+      value: 
+      objectReference: {fileID: 1694926982}
     - target: {fileID: 8526807937194781249, guid: bb1b2b73c48234948b2bc4a99357029b, type: 3}
       propertyPath: m_Layer
       value: 2

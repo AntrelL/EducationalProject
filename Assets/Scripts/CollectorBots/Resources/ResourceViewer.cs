@@ -6,18 +6,18 @@ namespace CollectorBots
     [RequireComponent(typeof(TMP_Text))]
     public class ResourceViewer : MonoBehaviour
     {
-        [SerializeField] private CollectorBotBase _collectorBotBase;
+        [SerializeField] private BotBase _botBase;
 
         private TMP_Text _TMPText;
 
         private void OnEnable()
         {
-            _collectorBotBase.NumberOfResourcesChanged += OnNumberOfResourcesChanged;
+            _botBase.NumberOfResourcesChanged += OnNumberOfResourcesChanged;
         }
 
         private void OnDisable()
         {
-            _collectorBotBase.NumberOfResourcesChanged -= OnNumberOfResourcesChanged;
+            _botBase.NumberOfResourcesChanged -= OnNumberOfResourcesChanged;
         }
 
         private void Awake()

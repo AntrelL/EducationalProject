@@ -7,7 +7,7 @@ namespace CollectorBots
         [SerializeField] private LayerMask _ignoredLayerMask;
         [SerializeField] private LayerMask _groundLayer;
 
-        private CollectorBotBase _selectedBase;
+        private BotBase _selectedBase;
 
         private void Update()
         {
@@ -28,7 +28,7 @@ namespace CollectorBots
 
         private void OnClickOnBotBase(BotBasePlayerClickArea botBasePlayerClickArea)
         {
-            CollectorBotBase botBase = botBasePlayerClickArea.CollectorBotBase;
+            BotBase botBase = botBasePlayerClickArea.CollectorBotBase;
 
             if (botBase.IsFlagGone)
                 return;
@@ -54,7 +54,7 @@ namespace CollectorBots
             UnselectBase();
         }
 
-        private void SelectBase(CollectorBotBase botBase)
+        private void SelectBase(BotBase botBase)
         {
             _selectedBase = botBase;
             _selectedBase.Select();

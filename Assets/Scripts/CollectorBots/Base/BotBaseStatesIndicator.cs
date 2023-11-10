@@ -3,7 +3,7 @@ using UnityEngine;
 namespace CollectorBots
 {
     [RequireComponent(typeof(MeshRenderer))]
-    public class BaseStatesIndicator : MonoBehaviour
+    public class BotBaseStatesIndicator : MonoBehaviour
     {
         [SerializeField] private Material _flagNotSet;
         [SerializeField] private Material _flagSet;

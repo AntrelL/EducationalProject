@@ -96,7 +96,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7434789019484878359}
   - component: {fileID: 7702391220509354910}
-  - component: {fileID: 126685431789888475}
+  - component: {fileID: 8043653341126564751}
+  - component: {fileID: 2808799015575428006}
   - component: {fileID: 7602111041903397314}
   m_Layer: 0
   m_Name: Base
@@ -145,7 +146,7 @@ CapsuleCollider:
   m_Height: 3
   m_Direction: 1
   m_Center: {x: 0, y: -0.24, z: 0}
---- !u!114 &126685431789888475
+--- !u!114 &8043653341126564751
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -154,22 +155,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 2068302676450446088}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afab02fc61b11a468341416ebc51960, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b353ed0686308445b6f76cdf7e57b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _initialNumberOfBots: 3
-  _botTemplate: {fileID: -6383689727808761918, guid: ff1c8df0898ee66438d51655f1106791, type: 3}
-  _maxNumberOfBots: 5
-  _botsContainer: {fileID: 0}
-  _resourcesContainer: {fileID: 0}
-  _platform: {fileID: 3908630552719771099}
-  _platformRadius: 0.5
-  _baseStatesIndicator: {fileID: 733080477740006589}
-  _flag: {fileID: 0}
-  _TemplateOfBase: {fileID: 126685431789888475}
+  _maxNumberOfBots: 4
   _priceOfBot: 3
   _priceOfBase: 5
-  _isFirstBase: 0
+  _TemplateOfBase: {fileID: 8043653341126564751}
+  _resourcesContainer: {fileID: 0}
+  _baseStatesIndicator: {fileID: 733080477740006589}
+  _flag: {fileID: 0}
+--- !u!114 &2808799015575428006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068302676450446088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4070fb6f2fd22534592e31cef3b4d7a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _botTemplate: {fileID: -6383689727808761918, guid: ff1c8df0898ee66438d51655f1106791, type: 3}
+  _botsContainer: {fileID: 0}
+  _platform: {fileID: 3908630552719771099}
+  _platformRadius: 0.5
 --- !u!114 &7602111041903397314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,7 +364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c7bb273f7f111641909ad7feee6076d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _collectorBotBase: {fileID: 126685431789888475}
+  _collectorBotBase: {fileID: 8043653341126564751}
 --- !u!1 &8258847164606615158
 GameObject:
   m_ObjectHideFlags: 0

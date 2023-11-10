@@ -5,29 +5,25 @@ using UnityEngine.Events;
 namespace CollectorBots
 {
     [RequireComponent(typeof(Scanner))]
-    public class CollectorBotBase : MonoBehaviour
+    [RequireComponent(typeof(BotSpawner))]
+    public class BotBase : MonoBehaviour
     {
         [SerializeField] private int _initialNumberOfBots;
-        [SerializeField] private CollectorBot _botTemplate;
         [SerializeField] private float _maxNumberOfBots;
-        [SerializeField] private Transform _botsContainer;
-        [SerializeField] private Transform _resourcesContainer;
-        [SerializeField] private Transform _platform;
-        [SerializeField] private float _platformRadius;
-        [SerializeField] private BaseStatesIndicator _baseStatesIndicator;
-        [SerializeField] private Flag _flag;
-        [SerializeField] private CollectorBotBase _TemplateOfBase;
         [SerializeField] private int _priceOfBot;
         [SerializeField] private int _priceOfBase;
+        [SerializeField] private BotBase _TemplateOfBase;
+        [SerializeField] private Transform _resourcesContainer;
+        [SerializeField] private BotBaseStatesIndicator _baseStatesIndicator;
+        [SerializeField] private Flag _flag;
 
-        private List<CollectorBot> _bots = new List<CollectorBot>();
+        private List<Bot> _bots = new List<Bot>();
         private Queue<Resource> _standbyResources = new Queue<Resource>(); 
         private List<Resource> _processedResources = new List<Resource>();
+        private BotSpawner _botSpawner;
         private Scanner _scanner;
 
         private int _numberOfResources;
-        private float _botSpawnDistance;
-        private float _botSpawnHeight;
 
         private bool _isFlagSet = false;
         private bool _isSelected = false;
@@ -38,6 +34,7 @@ namespace CollectorBots
 
         public bool IsFlagGone => _flag == null;
         public bool IsSelected => _isSelected;
+        public Transform ResourcesContainer => _resourcesContainer;
 
         private int NumberOfResources
         {
@@ -52,6 +49,7 @@ namespace CollectorBots
         private void Awake()
         {
             _scanner = GetComponent<Scanner>();
+            _botSpawner = GetComponent<BotSpawner>();
         }
 
         private void OnEnable()
@@ -73,23 +71,18 @@ namespace CollectorBots
             UpdateStatesIndicator();
 
             NumberOfResources = 0;
-            float botSpawnDistanceFactor = 0.8f;
 
-            _botSpawnDistance = _platformRadius * _platform.localScale.x * botSpawnDistanceFactor;
-
-            _botSpawnHeight = _botTemplate.GetComponent<CapsuleCollider>().height / 2f;
-
-            CreateInitialBots(_initialNumberOfBots);
+            _botSpawner.CreateInitialBots(_initialNumberOfBots, this);
             _scanner.StartScanCycles();
         }
 
-        public void Initialise(Transform botsContainer, Transform resourcesContainer, Flag flag, float botSpawnHeight)
+        public void Initialise(Transform botsContainer, Transform resourcesContainer, Flag flag)
         {
-            _botsContainer = botsContainer;
+            _botSpawner.Initialize(botsContainer);
+
             _resourcesContainer = resourcesContainer;
             _flag = flag;
 
-            _botSpawnHeight = botSpawnHeight;
             _isFirstBase = false;
 
             UpdateStatesIndicator();
@@ -103,7 +96,6 @@ namespace CollectorBots
             _processedResources.Remove(resource);
 
             NumberOfResources++;
-
             CreateMaxTasks();
         }
 
@@ -127,11 +119,11 @@ namespace CollectorBots
             UpdateStatesIndicator();
         }
 
-        public CollectorBotBase CreateBase(Vector3 position)
+        public BotBase CreateBase(Vector3 position)
         {
-            CollectorBotBase collectorBotBase = Instantiate(_TemplateOfBase, position, Quaternion.identity);
+            BotBase botBase = Instantiate(_TemplateOfBase, position, Quaternion.identity);
 
-            collectorBotBase.Initialise(_botsContainer, _resourcesContainer, _flag, _botSpawnHeight);
+            botBase.Initialise(_botSpawner.BotsContainer, _resourcesContainer, _flag);
 
             _isFlagSet = false;
             _isBaseConstructionTaskStarted = false;
@@ -140,18 +132,17 @@ namespace CollectorBots
             _flag = null;
 
             NumberOfResources -= _priceOfBase;
-
             UpdateStatesIndicator();
 
-            return collectorBotBase;
+            return botBase;
         }
 
-        public void ConnectBot(CollectorBot bot)
+        public void ConnectBot(Bot bot)
         {
             _bots.Add(bot);
         }
 
-        public void DisconnectBot(CollectorBot bot)
+        public void DisconnectBot(Bot bot)
         {
             _bots.Remove(bot);
         }
@@ -165,42 +156,6 @@ namespace CollectorBots
         {
             return (resource.gameObject.activeSelf == false ||
                 resource.transform.parent != _resourcesContainer) == false;
-        }
-
-        private void CreateInitialBots(int numberOfBots)
-        {
-            float angleOfOneTurn = 360f / numberOfBots;
-
-            for (int i = 0; i < numberOfBots; i++)
-            {
-                Quaternion rotatedDirection = Quaternion.AngleAxis(angleOfOneTurn * (i + 1), transform.up);
-                CreateBotAtDistanceFromCenter(rotatedDirection * transform.forward);
-            }
-        }
-
-        private void CreateBotAtDistanceFromCenter(Vector3 spawnDirectionOnBase)
-        {
-            Vector3 spawnPosition = spawnDirectionOnBase * _botSpawnDistance;
-            spawnPosition.y = _botSpawnHeight;
-
-            CreateBot(spawnPosition);
-        }
-
-        private void CreateBot(Vector3 spawnPosition)
-        {
-            CollectorBot bot = Instantiate(_botTemplate, spawnPosition,
-                Quaternion.identity, _botsContainer);
-
-            bot.Initialise(this, _resourcesContainer);
-            _bots.Add(bot);
-        }
-
-        private void CreateBot()
-        {
-            Vector3 spawnPosition = transform.position;
-            spawnPosition.y = _botSpawnHeight;
-
-            CreateBot(spawnPosition);
         }
 
         private void OnResourceDetected(Resource resource)
@@ -222,7 +177,7 @@ namespace CollectorBots
 
         private bool TryCreateTask()
         {
-            if (TryGetFreeBot(out CollectorBot bot) == false)
+            if (TryGetFreeBot(out Bot bot) == false)
                 return false;
 
             if (TryGetStandbyResource(out Resource resource) == false)
@@ -237,9 +192,9 @@ namespace CollectorBots
             return true;
         }
 
-        private bool TryGetFreeBot(out CollectorBot freeBot)
+        private bool TryGetFreeBot(out Bot freeBot)
         {
-            foreach (CollectorBot bot in _bots)
+            foreach (Bot bot in _bots)
             {
                 if (bot.IsFree)
                 {
@@ -273,12 +228,12 @@ namespace CollectorBots
                     return;
 
                 NumberOfResources -= _priceOfBot;
-                CreateBot();
+                _botSpawner.CreateBot(this);
             }
             else if (_isFlagSet && NumberOfResources >= _priceOfBase &&
                 _isBaseConstructionTaskStarted == false)
             {
-                if (TryGetFreeBot(out CollectorBot bot) == false)
+                if (TryGetFreeBot(out Bot bot) == false)
                     return;
 
                 bot.SetTask(_flag);

@@ -1,7 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace CollectorBots
 {
@@ -27,8 +25,9 @@ namespace CollectorBots
         private IEnumerator ScanAreaForResources()
         {
             WaitForSeconds waitForSeconds = new WaitForSeconds(_delay);
+            float firstDelayFactor = 0.5f;
 
-            yield return new WaitForSeconds(_delay / 2f);
+            yield return new WaitForSeconds(_delay * firstDelayFactor);
 
             while (true)
             {

@@ -33,7 +33,6 @@ namespace CollectorBots
 
             if (distance >= _capsuleCollider.radius * transform.localScale.x)
                 ResourceDetected?.Invoke(resource);
-            
         }
 
         public void Activate()

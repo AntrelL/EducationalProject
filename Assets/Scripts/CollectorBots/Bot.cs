@@ -2,18 +2,17 @@ using UnityEngine;
 
 namespace CollectorBots
 {
-    public class CollectorBot : MovementObject
+    public class Bot : MovementObject
     {
         [SerializeField] private Transform _handSlotTransform;
 
-        private CollectorBotBase _botBase;
+        private BotBase _botBase;
         private Resource _targetResource;
         private Flag _targetFlag;
 
         private bool _isFree = true;
         private bool _isTargetResourceReceived = false;
 
-        private Transform _resourcesContainer;
         private Resource _handSlot;
 
         public bool IsFree => _isFree;
@@ -31,7 +30,7 @@ namespace CollectorBots
             else
             {
                 if (_targetResource.gameObject.activeSelf == false || 
-                    (_isTargetResourceReceived == false && _targetResource.transform.parent != _resourcesContainer))
+                    (_isTargetResourceReceived == false && _targetResource.transform.parent != _botBase.ResourcesContainer))
                 {
                     _botBase.AbortResourceProcessing(_targetResource);
 
@@ -51,10 +50,10 @@ namespace CollectorBots
             {
                 TakeResource(resource);
             }
-            else if (other.TryGetComponent(out CollectorBotBase collectorBotBase) 
-                && collectorBotBase == _botBase && _isTargetResourceReceived)
+            else if (other.TryGetComponent(out BotBase botBase) 
+                && botBase == _botBase && _isTargetResourceReceived)
             {
-                LoadResourceInBase(collectorBotBase);
+                LoadResourceInBase(botBase);
             }
             else if (other.TryGetComponent(out Flag flag) && flag == _targetFlag)
             {
@@ -62,13 +61,12 @@ namespace CollectorBots
             }
         }
 
-        public void Initialise(CollectorBotBase collectorBotBase, Transform resourcesContainer)
+        public void Initialise(BotBase botBase)
         {
             if (_botBase != null)
                 throw new UnityException("The bot is already initialized.");
 
-            _botBase = collectorBotBase;
-            _resourcesContainer = resourcesContainer;
+            _botBase = botBase;
         }
 
         public void SetTask(Resource resource)
@@ -93,12 +91,12 @@ namespace CollectorBots
             _isTargetResourceReceived = true;
         }
 
-        private void LoadResourceInBase(CollectorBotBase collectorBotBase)
+        private void LoadResourceInBase(BotBase botBase)
         {
             _isFree = true;
             _isTargetResourceReceived = false;
 
-            collectorBotBase.LoadResource(_handSlot);
+            botBase.LoadResource(_handSlot);
             _handSlot = null;
         }
 
