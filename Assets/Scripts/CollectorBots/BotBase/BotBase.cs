@@ -89,6 +89,8 @@ namespace CollectorBots
             _scanner.StartScanCycles();
         }
 
+        public void UpdateTasks() => CreateMaxTasks();
+
         public void LoadResource(Resource resource)
         {
             resource.transform.parent = _resourcesContainer;
@@ -96,7 +98,6 @@ namespace CollectorBots
             _processedResources.Remove(resource);
 
             NumberOfResources++;
-            CreateMaxTasks();
         }
 
         public void SetFlag(Vector3 position)

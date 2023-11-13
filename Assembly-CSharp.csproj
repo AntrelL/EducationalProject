@@ -68,7 +68,8 @@
     <Compile Include="Assets\Scripts\Runner\ObjectPool.cs" />
     <Compile Include="Assets\Scripts\Task2\ObjectDestroyer.cs" />
     <Compile Include="Assets\Scripts\UI\Task2\HealthVisualizer.cs" />
-    <Compile Include="Assets\Scripts\CollectorBots\Bot.cs" />
+    <Compile Include="Assets\Scripts\CollectorBots\Bot\Programs\Movement.cs" />
+    <Compile Include="Assets\Scripts\CollectorBots\Bot\Programs\Program.cs" />
     <Compile Include="Assets\Scripts\AnimationTaskWithDOTween\Scaler.cs" />
     <Compile Include="Assets\Scripts\FlappyTerminator\Game.cs" />
     <Compile Include="Assets\Scripts\Task4\Thief.cs" />
@@ -103,6 +104,7 @@
     <Compile Include="Assets\Scripts\AnimationTaskWithDOTween\Rotator.cs" />
     <Compile Include="Assets\Scripts\AnimationTask\ScalingObject.cs" />
     <Compile Include="Assets\Scripts\Platformer\Items\HealingObject.cs" />
+    <Compile Include="Assets\Scripts\CollectorBots\Bot\Programs\Building.cs" />
     <Compile Include="Assets\Scripts\Runner\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Platformer\Items\Item.cs" />
     <Compile Include="Assets\Scripts\Task2\EnemySpawner.cs" />
@@ -117,6 +119,7 @@
     <Compile Include="Assets\Scripts\Platformer\EntityActionAnimator.cs" />
     <Compile Include="Assets\Scripts\CodeStyleTask\InstantBulletShooting.cs" />
     <Compile Include="Assets\Scripts\CollectorBots\Scanner\ScanDetector.cs" />
+    <Compile Include="Assets\Scripts\CollectorBots\Bot\Programs\ResourceDelivery.cs" />
     <Compile Include="Assets\Scripts\Platformer\Waypoint.cs" />
     <Compile Include="Assets\Scripts\UI\CursorVisualizerInEditor.cs" />
     <Compile Include="Assets\Scripts\CollectorBots\Player.cs" />
@@ -134,6 +137,7 @@
     <Compile Include="Assets\Scripts\CollectorBots\BotBase\BotBaseStatesIndicator.cs" />
     <Compile Include="Assets\Scripts\FlappyTerminator\Ui\ScoreViewer.cs" />
     <Compile Include="Assets\Scripts\Platformer\Movement.cs" />
+    <Compile Include="Assets\Scripts\CollectorBots\Bot\Bot.cs" />
     <Compile Include="Assets\Scripts\AnimationTaskWithDOTween\Transformer.cs" />
   </ItemGroup>
   <ItemGroup>

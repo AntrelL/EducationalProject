@@ -8,7 +8,7 @@ namespace CollectorBots
     {
         [SerializeField] private BotBase _botBase;
 
-        private TMP_Text _TMPText;
+        private TMP_Text _tmpText;
 
         private void OnEnable()
         {
@@ -22,12 +22,12 @@ namespace CollectorBots
 
         private void Awake()
         {
-            _TMPText = GetComponent<TMP_Text>();
+            _tmpText = GetComponent<TMP_Text>();
         }
 
         private void OnNumberOfResourcesChanged(int value)
         {
-            _TMPText.text = "Ресурсы: " + value;
+            _tmpText.text = "Ресурсы: " + value;
         }
     }
 }

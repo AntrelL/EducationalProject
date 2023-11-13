@@ -153,6 +153,10 @@ GameObject:
   - component: {fileID: 7252811271762166755}
   - component: {fileID: 634106415850608153}
   - component: {fileID: -6383689727808761918}
+  - component: {fileID: 2557199023119135245}
+  - component: {fileID: 4362653743783990507}
+  - component: {fileID: 6407627199113371619}
+  - component: {fileID: 4896657572676187057}
   m_Layer: 0
   m_Name: Bot
   m_TagString: Untagged
@@ -312,11 +316,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e8988f5bdca1264090563397de9e693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _handSlotTransform: {fileID: 1339815802819438070}
+--- !u!114 &2557199023119135245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7276980580162075756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 568406c53193ed8438b27f7e44a95988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _movementSpeed: 6
   _rotationSpeed: 0.4
-  _maxContactDistance: 2
+--- !u!114 &4362653743783990507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7276980580162075756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a766251e9b9fa304f8f32c2f36dfce63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6407627199113371619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7276980580162075756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 537f91aa97ecd9849af2e82327276b0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4896657572676187057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7276980580162075756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87e9115a256a2e14782d261b8573c90a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _handSlotTransform: {fileID: 1339815802819438070}
-  _targetResource: {fileID: 0}
-  _targetPosition: {x: 0, y: 0, z: 0}
-  _isBusy: 0
-  _handSlot: {fileID: 0}

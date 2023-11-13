@@ -51,7 +51,7 @@ public class MovementObject : MonoBehaviour, IWaitingObject
         _waiting = false;
     }
 
-    protected void MoveTo(Vector3 targetPosition, bool useRotation = true, bool yMovement = false)
+    public void MoveTo(Vector3 targetPosition, bool useRotation = true, bool yMovement = false)
     {
         Vector3 movementDirection = (targetPosition - transform.position).normalized;
 

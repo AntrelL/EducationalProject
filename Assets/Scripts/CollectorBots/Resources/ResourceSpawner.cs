@@ -20,13 +20,13 @@ namespace CollectorBots
 
         private IEnumerator SpawnCycles()
         {
-            WaitForSeconds waitForSeconds = new WaitForSeconds(_delay);
+            WaitForSeconds delay = new WaitForSeconds(_delay);
 
             while (true)
             {
                 SpawnResource(_sideOfOuterSquareLimitationZone, _sideOfInnerSquareLimitationZone);
 
-                yield return waitForSeconds;
+                yield return delay;
             }
         }
 
@@ -35,15 +35,17 @@ namespace CollectorBots
             Vector3 position = Vector3.zero;
             position.y = _spawnHeight;
 
-            float halfOfOuterSide = sideOfOuterSquareLimitationZone / 2f;
-            position.x = Random.Range(halfOfOuterSide, -halfOfOuterSide);
+            float numberOfPartsToDivideSides = 2f;
 
-            float halfOfInnerSide = sideOfInnerSquareLimitationZone / 2f;
+            float partOfOuterSide = sideOfOuterSquareLimitationZone / numberOfPartsToDivideSides;
+            position.x = Random.Range(partOfOuterSide, -partOfOuterSide);
 
-            if (position.x < halfOfInnerSide && position.x > -halfOfInnerSide)
+            float partOfInnerSide = sideOfInnerSquareLimitationZone / numberOfPartsToDivideSides;
+
+            if (position.x < partOfInnerSide && position.x > -partOfInnerSide)
             {
-                float firstOption = Random.Range(halfOfInnerSide, halfOfOuterSide);
-                float secondOption = Random.Range(-halfOfOuterSide, -halfOfInnerSide);
+                float firstOption = Random.Range(partOfInnerSide, partOfOuterSide);
+                float secondOption = Random.Range(-partOfOuterSide, -partOfInnerSide);
 
                 bool decision = System.Convert.ToBoolean(Random.Range(0, 2));
 
@@ -51,7 +53,7 @@ namespace CollectorBots
             }
             else
             {
-                position.z = Random.Range(halfOfOuterSide, -halfOfOuterSide);
+                position.z = Random.Range(partOfOuterSide, -partOfOuterSide);
             }
 
             Resource resource = GetObject();

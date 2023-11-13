@@ -16,7 +16,10 @@ namespace CollectorBots
 
         private void Start()
         {
-            float botCenterPositionY = _botTemplate.GetComponent<CapsuleCollider>().height / 2f;
+            float numberOfPartsToDivideBotHeight = 2f;
+
+            float botHeight = _botTemplate.GetComponent<CapsuleCollider>().height;
+            float botCenterPositionY = botHeight / numberOfPartsToDivideBotHeight;
             _botSpawnHeight = botCenterPositionY;
 
             float botSpawnDistanceFactor = 0.8f;
@@ -61,7 +64,7 @@ namespace CollectorBots
             Bot bot = Instantiate(_botTemplate, spawnPosition,
                 Quaternion.identity, _botsContainer);
 
-            bot.Initialise(botBase);
+            bot.Init(botBase);
             botBase.ConnectBot(bot);
         }
     }

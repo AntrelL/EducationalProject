@@ -24,7 +24,7 @@ namespace CollectorBots
 
         private IEnumerator ScanAreaForResources()
         {
-            WaitForSeconds waitForSeconds = new WaitForSeconds(_delay);
+            WaitForSeconds delay = new WaitForSeconds(_delay);
             float firstDelayFactor = 0.5f;
 
             yield return new WaitForSeconds(_delay * firstDelayFactor);
@@ -42,7 +42,7 @@ namespace CollectorBots
                 }
 
                 _detector.Deactivate();
-                yield return waitForSeconds;
+                yield return delay;
             }
         }
     }
