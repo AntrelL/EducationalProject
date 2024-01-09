@@ -20,10 +20,11 @@ namespace Platformer
 
         public int MaxHealth => _maxHealth;
 
-        protected int Health
+
+        public int Health
         {
             get => _health;
-            set
+            protected set
             {
                 _health = Mathf.Clamp(value, 0, _maxHealth);
                 HealthChanged?.Invoke(_health);

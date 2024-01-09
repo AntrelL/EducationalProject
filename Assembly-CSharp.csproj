@@ -127,6 +127,7 @@
     <Compile Include="Assets\Scripts\Task2\MovementObject.cs" />
     <Compile Include="Assets\Scripts\FlappyTerminator\Ui\StartScreen.cs" />
     <Compile Include="Assets\Scripts\Runner\UI\Health\HealthCell.cs" />
+    <Compile Include="Assets\Scripts\Platformer\VampirismSkill.cs" />
     <Compile Include="Assets\Scripts\Platformer\Entity\EntityActionAnimator.cs" />
     <Compile Include="Assets\Scripts\FlappyTerminator\Enemy\EnemyMover.cs" />
     <Compile Include="Assets\Scripts\Platformer\Entity\Entity.cs" />

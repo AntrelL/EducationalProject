@@ -2,9 +2,19 @@ using UnityEngine;
 
 namespace Platformer
 {
+    [RequireComponent(typeof(VampirismSkill))]
     public class Player : Entity
     {
         private const string Horizontal = "Horizontal";
+
+        private VampirismSkill _vampirismSkill;
+
+        protected override void Start()
+        {
+            base.Start();
+
+            _vampirismSkill = GetComponent<VampirismSkill>();
+        }
 
         protected override void Update()
         {
@@ -12,6 +22,9 @@ namespace Platformer
 
             if (Input.GetKeyDown(KeyCode.Space))
                 Jump();
+
+            if (Input.GetKeyDown(KeyCode.E))
+                _vampirismSkill.TryActivate();
         }
 
         protected override void FixedUpdate()

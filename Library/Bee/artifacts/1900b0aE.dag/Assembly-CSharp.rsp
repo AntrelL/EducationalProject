@@ -438,6 +438,7 @@
 "Assets/Scripts/Platformer/Items/Item.cs"
 "Assets/Scripts/Platformer/Items/ItemSpawner.cs"
 "Assets/Scripts/Platformer/Player.cs"
+"Assets/Scripts/Platformer/VampirismSkill.cs"
 "Assets/Scripts/Runner/ObjectPool.cs"
 "Assets/Scripts/Runner/Parallax.cs"
 "Assets/Scripts/Runner/Player/Player.cs"
